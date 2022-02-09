@@ -1,19 +1,8 @@
-<script setup>
-import { ref } from "vue";
-import NavBar from "@/components/NavBar.vue";
-
-let counter = ref(0);
-
-setInterval(() => {
-  counter.value++;
-}, 1000);
-</script>
-
 <template>
-  <div class="bg-base-200 drawer min-h-screen rounded-lg shadow">
+  <div class="bg-base-200 drawer h-96 rounded-lg shadow">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
-      <div class="navbar bg-base-300 w-full justify-between">
+      <div class="navbar bg-base-300 w-full">
         <div class="flex-none lg:hidden">
           <label for="my-drawer-3" class="btn btn-square btn-ghost">
             <svg
@@ -32,53 +21,34 @@ setInterval(() => {
           </label>
         </div>
         <div
-          class="from-primary from-warning mx-2 max-w-md flex-1 rounded-md bg-gradient-to-l px-2 md:from-yellow-500"
+          class="from-primary mx-2 flex-1 rounded-md bg-gradient-to-l from-teal-300 px-2 md:from-yellow-500"
         >
-          <span class="text-base text-gray-200 hover:animate-pulse">
-            PDPkrypto Web3.0
-          </span>
+          <span class="animate-pulse text-gray-400">
+            PDPkrypto Web3.0 Portofolio</span
+          >
         </div>
         <div class="hidden flex-none lg:block">
           <ul class="menu horizontal">
             <li>
-              <a
-                @click="router.push('Mood')"
-                class="rounded-btn hover:animate-pulse"
-                >Mood dApp</a
-              >
+              <a @click="router.push('Mood')" class="rounded-btn">Mood dApp</a>
             </li>
             <li>
-              <a class="rounded-btn hover:animate-pulse">Whitelist dApp</a>
+              <a class="rounded-btn">Whitelist dApp</a>
             </li>
             <li>
-              <a class="rounded-btn hover:animate-pulse">NFT App</a>
+              <a class="rounded-btn">NFT App</a>
             </li>
             <li>
-              <a class="rounded-btn hover:animate-pulse">ICO dApp</a>
+              <a class="rounded-btn">ICO dApp</a>
             </li>
             <li>
-              <a class="rounded-btn hover:animate-pulse">DAO</a>
+              <a class="rounded-btn">DAO</a>
             </li>
             <li>
-              <a class="rounded-btn hover:animate-pulse">DeFi Exchange</a>
+              <a class="rounded-btn">DeFi Exchange</a>
             </li>
           </ul>
         </div>
-      </div>
-      <div class="">
-        <header class="shadow" v-if="$route.meta.title">
-          <div class="w-52 px-4 py-6">
-            <h1
-              @click="counter = 0"
-              class="text-3xl font-bold leading-tight transition-all hover:animate-bounce"
-            >
-              {{ $route.meta.title }} / {{ counter }}
-            </h1>
-          </div>
-        </header>
-        <main>
-          <router-view />
-        </main>
       </div>
     </div>
     <div class="drawer-side">
@@ -106,3 +76,4 @@ setInterval(() => {
     </div>
   </div>
 </template>
+<script setup></script>
